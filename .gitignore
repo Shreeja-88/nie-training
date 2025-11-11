@@ -1,0 +1,148 @@
+# ============================================
+# FRONTEND (React)
+# ============================================
+
+# dependencies
+frontend/node_modules/
+frontend/package-lock.json
+frontend/yarn.lock
+
+# build output
+frontend/build/
+frontend/.parcel-cache/
+frontend/.next/
+frontend/out/
+
+# misc
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/.DS_Store
+
+# IDE/project settings
+frontend/.vscode/
+frontend/.idea/
+frontend/*.log
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+
+# ============================================
+# BACKEND (Django)
+# ============================================
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+db.sqlite3
+db.sqlite3-journal
+
+# Django environment & secrets
+.env
+.env.*
+config/settings_local.py
+config/local_settings.py
+*.secret_key
+*.json
+
+# Static & media
+/staticfiles/
+media/
+media_root/
+
+# Virtual environment
+venv/
+ENV/
+env/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Migrations (optional, if generated automatically)
+**/migrations/__pycache__/
+**/migrations/*.pyc
+# Uncomment if you don’t want to track migrations
+# **/migrations/
+
+
+# ============================================
+# SYSTEM & EDITOR FILES
+# ============================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+*.sublime-project
+*.sublime-workspace
+
+# ============================================
+# TESTS, COVERAGE, AND BUILD ARTIFACTS
+# ============================================
+
+.coverage
+coverage/
+htmlcov/
+*.cover
+*.py,cover
+nosetests.xml
+coverage.xml
+*.spec
+
+# ============================================
+# DOCKER & DEPLOYMENT
+# ============================================
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+Dockerfile.dev
+*.pid
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+.eggs/
+MANIFEST
+
+# ============================================
+# PROJECT-SPECIFIC
+# ============================================
+
+# Training data, exports, etc.
+data/
+export/
+temp/
+*.csv
+*.json
+*.zip
+
+# API keys or private config
+secrets.json
+config.json
+credentials.json

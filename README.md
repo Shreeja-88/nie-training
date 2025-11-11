@@ -1,5 +1,1 @@
-# nie-training
-
-Hello Nie
-
-bye!
+#Training Search App
