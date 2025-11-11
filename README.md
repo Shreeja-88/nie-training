@@ -1,1 +1,1 @@
-#Training Search App
+Trainer's Search Application
