@@ -66,8 +66,10 @@ venv/
 ENV/
 env/
 .venv/
+myenv/
 pip-log.txt
 pip-delete-this-directory.txt
+
 
 # Migrations (optional, if generated automatically)
 **/migrations/__pycache__/
