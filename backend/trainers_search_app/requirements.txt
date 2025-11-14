@@ -8,3 +8,8 @@ dj-database-url
 psycopg2-binary
 
 whitenoise
+
+pymysql
+dj-database-url
+mysqlclient
+
