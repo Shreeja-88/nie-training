@@ -1,32 +1,33 @@
 # Trainers Search App
 
-A full-stack web application built with **Django REST Framework** (backend) and **React** (frontend).  
-It enables users to securely log in, and then search for, add, update, and delete trainer profiles.
+A full-stack web application built with Django REST Framework (backend) and React (frontend). It enables users to securely log in, and then search for, add, update, and delete trainer profiles.
 
 ---
 
 ## Tech Stack
 
-- Backend: Django + Django REST Framework  
-  - JWT authentication using SimpleJWT  
-  - CRUD APIs for trainer resources (Create, Read/Search, Update, Delete)  
-  - Pagination & filtering support for listing trainers  
-  - CORS configured for client consumption  
-  - Database support for SQLite (default) and MySQL (optional)  
-- Frontend: React  
-  - Login/authentication flow  
-  - Search trainers  
-  - Add new trainer form  
-  - Trainer list with update/delete capability  
-  - React Router for navigation  
-  - Axios for API requests  
-  - Responsive UI design  
+**Backend**  
+- Django + Django REST Framework  
+- JWT authentication using SimpleJWT  
+- CRUD APIs for trainer resources (Create, Read/Search, Update, Delete)  
+- Pagination & filtering support for listing trainers  
+- CORS configured for client consumption  
+
+**Frontend**  
+- React  
+- Login/authentication flow  
+- Search trainers  
+- Add new trainer form  
+- Trainer list with update/delete capability  
+- React Router for navigation  
+- Axios for API requests  
+- Responsive UI design  
 
 ---
 
 ## Features
 
-**Backend**
+### Backend  
 - JWT Authentication (login → obtain token → protected endpoints)  
 - Trainer CRUD endpoints:  
   - Add a new trainer  
@@ -36,48 +37,113 @@ It enables users to securely log in, and then search for, add, update, and delet
 - CORS handling so the React frontend can call the API  
 - Support for SQLite (default) and easily switchable to MySQL  
 
-**Frontend**
+### Frontend  
 - User login / token storage  
 - Search interface: find trainers by name / criteria  
 - Trainer list view: display existing trainers, with update/delete actions  
 - Add Trainer form: input trainer details and submit to API  
 - Update Trainer: edit existing trainer details  
-- Delete Trainer: remove trainer entry  
+- Delete a trainer: remove trainer entry  
 - Responsive layout: works well on desktop and mobile  
 
 ---
+
+## Project Structure
+
+```
+TRAINER-S-SEARCH-APP/
+│
+├── backend/
+│   └── trainers_search_app/
+│       ├── myenv/                       # Virtual environment
+│       │
+│       ├── trainers/                    # Django app containing Trainer CRUD logic
+│       │   ├── **pycache**/
+│       │   ├── migrations/
+│       │   ├── **init**.py
+│       │   ├── admin.py
+│       │   ├── apps.py
+│       │   ├── models.py
+│       │   ├── serializer.py
+│       │   ├── tests.py
+│       │   ├── urls.py
+│       │   └── views.py
+│       │
+│       ├── trainers_search_app/         # Django project root
+│       │   ├── **pycache**/
+│       │   ├── **init**.py
+│       │   ├── asgi.py
+│       │   ├── settings.py
+│       │   ├── urls.py
+│       │   └── wsgi.py
+│       │
+│       ├── manage.py
+│       └── requirements.txt
+│
+│
+├── frontend/
+│   └── trainers/
+│       ├── node_modules/                # Installed dependencies
+│       ├── public/
+│       ├── src/
+│       │   ├── components/
+│       │   ├── pages/
+│       │   ├── api/
+│       │   ├── App.jsx
+│       │   └── main.jsx
+│       │
+│       ├── .gitignore
+│       ├── eslint.config.js
+│       ├── index.html
+│       ├── package-lock.json
+│       ├── package.json
+│       ├── README.md
+│       ├── vite.config.js
+│       └── images/                      # All UI screenshots stored here
+│
+├── .gitignore
+└── README.md
+
+````
 
 ## Getting Started
 
 ### Backend Setup
 
-1. Clone the repository:
+1. Clone the repository:  
    ```bash
-   git clone https://github.com/Shreeja-88/nie-training.git
-   cd nie-training
+   git clone https://github.com/Shreeja-88/Trainer-s-Search-App.git
+   cd Trainer-s-Search-App
     ````
 
 2. Create and activate a virtual environment:
 
    ```bash
    python3 -m venv venv
-   source venv/bin/activate   # on Linux/Mac
-   # venv\Scripts\activate    # on Windows
+   source venv/bin/activate   # on Linux/Mac  
+   venv\Scripts\activate      # For Windows
    ```
+
 3. Install dependencies:
 
-4. Configure database settings in `settings.py` (default: SQLite).
-   If you prefer MySQL, update the DATABASES section accordingly.
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Configure database settings in `settings.py` (default: SQLite). If you prefer MySQL, update the `DATABASES` section accordingly.
+
 5. Apply migrations:
 
    ```bash
    python manage.py migrate
    ```
+
 6. Create a superuser (optional, for admin access):
 
    ```bash
    python manage.py createsuperuser
    ```
+
 7. Run the development server:
 
    ```bash
@@ -88,13 +154,20 @@ It enables users to securely log in, and then search for, add, update, and delet
 
 ### Frontend Setup
 
-1. Navigate to frontend folder:
+1. Navigate to the frontend folder:
 
    ```bash
-   cd ../frontend
+   cd frontend
    ```
+
 2. Install dependencies:
-3. Configure the API base URL (if needed) in the React `src/config` or environment file.
+
+   ```bash
+   npm install
+   ```
+
+3. Configure the API base URL (if needed) in the React `src/config` or environment file (e.g., `REACT_APP_API_BASE_URL=http://127.0.0.1:8000/`).
+
 4. Run the React development server:
 
    ```bash
@@ -111,7 +184,7 @@ It enables users to securely log in, and then search for, add, update, and delet
 2. Frontend sends credentials to backend login endpoint → obtains JWT access & refresh token.
 3. Access token is stored (e.g., localStorage) and used in `Authorization: Bearer <token>` header for subsequent API calls.
 4. Protected trainer endpoints validate the token and allow create/update/delete only for authenticated users.
-5. When access token expires, refresh token is used to obtain a new access token.
+5. When access token expires, frontend uses the refresh token to obtain a new access token.
 
 ---
 
@@ -128,9 +201,9 @@ Here are example environment/config items you may need:
 
 ## Testing
 
-* Backend: You can add Django unit tests for your API endpoints (`pytest` or Django’s test framework).
-* Frontend: Use React testing library / Jest for component/unit tests.
-* Manual test flow:
+* **Backend**: You can add Django unit tests for your API endpoints (using pytest or Django’s built-in test framework).
+* **Frontend**: Use React Testing Library / Jest for component/unit tests.
+* **Manual test flow**:
 
   1. Register/login user → obtain token.
   2. Create trainer via UI → verify it appears in list.
@@ -153,13 +226,36 @@ Here are example environment/config items you may need:
 
 ---
 
-## Contribution
+## Screenshots
 
-This project is open source. Feel free to fork the repo, make improvements, and submit pull requests.
+```markdown
+### Screenshot: Login Page  
+![Login Page](images/login.png)
+
+### Screenshot: Trainer List and Search  
+![Trainer List](images/trainer-list.png)
+
+### Screenshot: Add / Edit Trainer  
+![Add Trainer](images/add-trainer.png)
+```
+
+Replace the filenames with your actual image filenames.
 
 ---
 
-Thank you for checking out the Trainers Search App! 🎉
+## Contribution
+
+This project is open-source. Feel free to fork the repo, make improvements, and submit pull requests.
+
+---
+
+## About
+
+Trainers Search App – A full-stack web application built with Django REST Framework (backend) and React (frontend). It enables users to securely log in, and then search for, add, update, and delete trainer profiles.
+
+Thank you for checking out the Trainers Search App!
+
+
 
 
 
