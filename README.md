@@ -228,18 +228,31 @@ Here are example environment/config items you may need:
 
 ## Screenshots
 
-```markdown
-### Screenshot: Login Page  
-![Login Page](images/login.png)
 
-### Screenshot: Trainer List and Search  
-![Trainer List](images/trainer-list.png)
+### Login Page  🟣 
+![Login Page](images/Login.png)
 
-### Screenshot: Add / Edit Trainer  
-![Add Trainer](images/add-trainer.png)
-```
+---
 
-Replace the filenames with your actual image filenames.
+### Home Dashboard  🟣 
+![Home](images/Home.png)
+
+---
+
+### Search Trainers  🟣 
+![Search Trainers](images/SearchTrainer.png)
+
+---
+
+### Add Trainer  🟣 
+![Add Trainer](images/AddTrainer.png)
+
+---
+
+### Trainers List  🟣 
+![Trainers List](images/TrainersList.png)
+
+
 
 ---
 
