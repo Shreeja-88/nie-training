@@ -229,27 +229,27 @@ Here are example environment/config items you may need:
 ## Screenshots
 
 
-### Login Page  🟣 
+### Login Page  
 ![Login Page](images/Login.png)
 
 ---
 
-### Home Dashboard  🟣 
+### Home Dashboard  
 ![Home](images/Home.png)
 
 ---
 
-### Search Trainers  🟣 
+### Search Trainers  
 ![Search Trainers](images/SearchTrainer.png)
 
 ---
 
-### Add Trainer  🟣 
+### Add Trainer  
 ![Add Trainer](images/AddTrainer.png)
 
 ---
 
-### Trainers List  🟣 
+### Trainers List  
 ![Trainers List](images/TrainersList.png)
 
 
